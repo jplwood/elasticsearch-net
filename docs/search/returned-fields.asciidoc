@@ -36,7 +36,7 @@ by using {ref_current}/mapping-store.html[store] on the mapping. Why would you e
 Well, you may disable `_source` so that the source is not stored and select to store only specific fields. 
 Another possibility is that the `_source` contains a field with large values, for example, the body of 
 a blog post, but typically only another field is needed, for example, the title of the blog post. 
-In this case, we don't want to pay the cost of Elasticsearch deserializing the entire `_soure` just to 
+In this case, we don't want to pay the cost of Elasticsearch deserializing the entire `_source` just to 
 get a small field.
 
 [IMPORTANT]
@@ -50,7 +50,8 @@ Seriously consider whether disabling source is what you really want to do for yo
 
 --
 
-When storing fields in this manner, the individual field values to return can be specified using`.StoredFields` on the search request
+When storing fields in this manner, the individual field values to return can be specified using
+`.StoredFields` on the search request
 
 [source,csharp]
 ----
